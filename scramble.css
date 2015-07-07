@@ -67,3 +67,7 @@ body{
 	border-radius: 0px;
 	border: none;
 }
+
+#restartButton:hover{
+	cursor: pointer;
+}

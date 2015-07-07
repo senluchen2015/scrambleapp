@@ -72,7 +72,7 @@ angular.module('scrambleApp',[])
 				var backspace = 8 
 				var lowerBound = 64
 				var upperBound = 91
-
+				
 				if(event.which == spacebar){
 					$scope.multiplier = 1;
 					getWord()
@@ -89,7 +89,7 @@ angular.module('scrambleApp',[])
 			}
 		}
 
-		$scope.preventBack = function(){
+		$scope.preventBack = function(event){
 			var backspace = 8 
 			if(event.which == backspace){
 				event.preventDefault()
