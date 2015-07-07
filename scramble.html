@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app = "scrambleApp">
+<head>
+	<title>Scramble</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="scramble.css">
+</head>
+<body ng-controller="scrambleController as scramble" data-ng-init="init()"ng-keyup="keyEntered($event)">
+	<div id="word" class="block">
+		<div class="char" ng-repeat="character in word" ng-class="{'entered':character.value.entered, 'wordCorrect':wordCorrect, 'wordIncorrect':wordIncorrect}">
+			{{character.key}}
+		</div>
+	</div>
+	<div id="tracker" class="block">
+		<span>Time Left: {{timeLeft}} |</span>
+		<span>Points: {{points}} | </span>
+		<span>Multiplier: {{multiplier}}x </span>
+		<p>Press Space to skip word (lose multiplier)</p>
+	</div>
+	<div id="finished" ng-show="isFinished">
+		<div class="block">Game over! You Scored: {{points}} points!</div>
+		<div class="block"><button id="restartButton" ng-click="init()">Play Again!</button></div>
+	</div>
+</body>
+	<script src="scramble.js"></script>
+</html>
