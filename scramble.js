@@ -89,6 +89,13 @@ angular.module('scrambleApp',[])
 			}
 		}
 
+		$scope.preventBack = function(){
+			var backspace = 8 
+			if(event.which == backspace){
+				event.preventDefault()
+			}
+		}
+
 		//remove last character in enteredWord and put i back in unenteredWord
 		handleDelete = function(){
 			if(enteredWord.length > 0){

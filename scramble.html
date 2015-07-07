@@ -5,7 +5,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="scramble.css">
 </head>
-<body ng-controller="scrambleController as scramble" data-ng-init="init()"ng-keyup="keyEntered($event)">
+<body ng-controller="scrambleController as scramble" data-ng-init="init()" ng-keyup="keyEntered($event)" ng-keydown="preventBack()">
 	<div id="word" class="block">
 		<div class="char" ng-repeat="character in word" ng-class="{'entered':character.value.entered, 'wordCorrect':wordCorrect, 'wordIncorrect':wordIncorrect}">
 			{{character.key}}
